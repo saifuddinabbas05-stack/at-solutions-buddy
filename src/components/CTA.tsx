@@ -13,7 +13,11 @@ export const CTA = () => {
             Book a 20-minute demo to see how our AI solutions can transform your business operations. No commitment required.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-            <Button size="lg" className="group text-lg px-8">
+            <Button 
+              size="lg" 
+              className="group text-lg px-8"
+              onClick={() => document.getElementById('book-demo')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               Book Your Demo
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
