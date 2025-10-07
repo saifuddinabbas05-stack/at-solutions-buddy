@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { LogoWithBgRemoval } from "./LogoWithBgRemoval";
 
 export const Header = () => {
   return (
@@ -6,7 +7,7 @@ export const Header = () => {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center gap-2">
-            <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-primary to-accent" />
+            <LogoWithBgRemoval />
             <span className="text-xl font-bold">A&T Solutions</span>
           </div>
           
