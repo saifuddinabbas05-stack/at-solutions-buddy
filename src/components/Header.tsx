@@ -21,7 +21,12 @@ export const Header = () => {
             <a href="#pricing" className="text-sm hover:text-primary transition-colors">
               Pricing
             </a>
-            <Button>Book Demo</Button>
+            <a href="#newsletter" className="text-sm hover:text-primary transition-colors">
+              Newsletter
+            </a>
+            <Button onClick={() => document.getElementById('book-demo')?.scrollIntoView({ behavior: 'smooth' })}>
+              Book Demo
+            </Button>
           </nav>
 
           <Button className="md:hidden">Menu</Button>

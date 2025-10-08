@@ -12,3 +12,6 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+# Provide sitemap if available
+Sitemap: /sitemap.xml
