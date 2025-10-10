@@ -8,6 +8,7 @@ import { Card } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 import { Calendar, ArrowRight } from "lucide-react";
 import { z } from "zod";
+import { supabase } from "@/integrations/supabase/client";
 
 const demoFormSchema = z.object({
   companyName: z.string().trim().min(2, "Company name must be at least 2 characters").max(100),
@@ -36,9 +37,21 @@ export const DemoBookingForm = () => {
     try {
       const validatedData = demoFormSchema.parse(formData);
       
-      // For now, we'll show a success message
-      // When Lovable Cloud is connected, this will save to database
-      console.log("Demo booking submitted:", validatedData);
+      // Save to database
+      const { error: dbError } = await supabase
+        .from('demo_requests')
+        .insert({
+          company_name: validatedData.companyName,
+          contact_name: validatedData.contactName,
+          email: validatedData.email,
+          phone: validatedData.phone,
+          industry: validatedData.industry,
+          team_size: validatedData.employeeCount,
+          interested_solution: validatedData.interestedSku,
+          primary_problem: validatedData.primaryProblem,
+        });
+
+      if (dbError) throw dbError;
       
       toast({
         title: "Demo Request Submitted!",
@@ -59,6 +72,12 @@ export const DemoBookingForm = () => {
         toast({
           title: "Validation Error",
           description: "Please check the form and try again.",
+          variant: "destructive",
+        });
+      } else {
+        toast({
+          title: "Submission Failed",
+          description: "Please try again later.",
           variant: "destructive",
         });
       }

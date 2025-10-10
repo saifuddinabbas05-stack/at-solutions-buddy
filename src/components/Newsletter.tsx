@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, ArrowRight } from "lucide-react";
 import { z } from "zod";
+import { supabase } from "@/integrations/supabase/client";
 
 const newsletterSchema = z.object({
   email: z.string().trim().email("Invalid email address").max(255),
@@ -23,22 +24,39 @@ export const Newsletter = () => {
     try {
       const validatedData = newsletterSchema.parse({ email });
       
-      // For now, we'll show a success message
-      // When Lovable Cloud is connected, this will save to database
-      console.log("Newsletter signup:", validatedData);
-      
-      toast({
-        title: "Successfully Subscribed!",
-        description: "You'll receive our latest AI insights and updates.",
-      });
+      // Save to database
+      const { error: dbError } = await supabase
+        .from('newsletter_subscribers')
+        .insert({ email: validatedData.email });
 
-      setEmail("");
+      if (dbError) {
+        if (dbError.code === '23505') { // Unique constraint violation
+          toast({
+            title: "Already Subscribed",
+            description: "This email is already on our list!",
+          });
+        } else {
+          throw dbError;
+        }
+      } else {
+        toast({
+          title: "Successfully Subscribed!",
+          description: "You'll receive our latest AI insights and updates.",
+        });
+        setEmail("");
+      }
     } catch (error) {
       if (error instanceof z.ZodError) {
         setError(error.errors[0].message);
         toast({
           title: "Invalid Email",
           description: "Please enter a valid email address.",
+          variant: "destructive",
+        });
+      } else {
+        toast({
+          title: "Subscription Failed",
+          description: "Please try again later.",
           variant: "destructive",
         });
       }
