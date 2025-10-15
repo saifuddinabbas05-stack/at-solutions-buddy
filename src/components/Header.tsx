@@ -15,14 +15,8 @@ export const Header = () => {
             <a href="#solutions" className="text-sm hover:text-primary transition-colors">
               Solutions
             </a>
-            <a href="#industries" className="text-sm hover:text-primary transition-colors">
-              Industries
-            </a>
-            <a href="#pricing" className="text-sm hover:text-primary transition-colors">
-              Pricing
-            </a>
-            <a href="#newsletter" className="text-sm hover:text-primary transition-colors">
-              Newsletter
+            <a href="#about" className="text-sm hover:text-primary transition-colors">
+              About Us
             </a>
             <Button onClick={() => document.getElementById('book-demo')?.scrollIntoView({ behavior: 'smooth' })}>
               Book Demo

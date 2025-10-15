@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/card";
-import { FileText, Brain, MessageSquare, Phone, Video } from "lucide-react";
+import { FileText, Brain, Phone, Video } from "lucide-react";
 
 export const Solutions = () => {
   const solutions = [
@@ -26,18 +26,6 @@ export const Solutions = () => {
         "Admin analytics dashboard"
       ],
       timeline: "6–8 weeks"
-    },
-    {
-      icon: MessageSquare,
-      title: "MCP+RAG Web Chatbot",
-      outcome: "More site conversions via accurate answers; lead capture; call deflection",
-      features: [
-        "Branded website widget",
-        "Multi-channel pipeline integration",
-        "Lead database and CRM sync",
-        "ADA-compliant design"
-      ],
-      timeline: "3–5 weeks"
     },
     {
       icon: Phone,
