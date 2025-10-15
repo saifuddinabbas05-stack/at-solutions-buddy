@@ -11,9 +11,11 @@ import { Footer } from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      <main className="pt-20">
+    <div className="min-h-screen bg-background relative">
+      <div className="liquid-glass-bg" />
+      <div className="relative z-10">
+        <Header />
+        <main className="pt-20">
         <Hero />
         <Stats />
         <Solutions />
@@ -22,8 +24,9 @@ const Index = () => {
         <DemoBookingForm />
         <Newsletter />
         <CTA />
-      </main>
-      <Footer />
+        </main>
+        <Footer />
+      </div>
     </div>
   );
 };
