@@ -13,21 +13,24 @@ export const Hero = () => {
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
-            We deliver work
+            <span className="bg-gradient-to-br from-foreground to-muted-foreground bg-clip-text text-transparent">
+              We deliver AI solutions
+            </span>
             <br />
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              that converts
+            <span className="bg-gradient-to-r from-white to-primary bg-clip-text text-transparent">
+              driving your bottom line
             </span>
           </h1>
           
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            AI consulting for small and mid-size businesses. Automate invoices, empower teams with instant answers, and boost conversions—all with predictable costs.
+            We build custom AI tools that automate the repetitive work holding your team back. 
+            Designed for small and medium sized businesses that want real ROI.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
             <Button 
               size="lg" 
-              className="group text-lg px-8"
+              className="group text-lg px-8 bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white transition-all duration-300 shadow-lg hover:shadow-primary/30"
               onClick={() => document.getElementById('book-demo')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Book a 20-Minute Demo

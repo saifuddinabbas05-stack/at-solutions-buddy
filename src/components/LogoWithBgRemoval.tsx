@@ -1,4 +1,4 @@
-import atLogo from '@/assets/atlogo.png';
+import atLogo from '@/assets/atlogo.svg';
 
 export const LogoWithBgRemoval = () => {
   return (

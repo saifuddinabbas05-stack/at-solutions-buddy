@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/card";
-import { FileText, Brain, Phone, Video } from "lucide-react";
+import { Brain, FileText, Phone, Video } from "lucide-react";
 
 export const Solutions = () => {
   const solutions = [
@@ -61,7 +61,7 @@ export const Solutions = () => {
             Flagship Solutions
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Choose the AI solution that fits your business needs. All come with clear timelines and custom pricing—request a quote to get started.
+            Choose the AI solution that fits your business needs. Request a quote to get started.
           </p>
         </div>
 
