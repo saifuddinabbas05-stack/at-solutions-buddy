@@ -21,8 +21,16 @@ export const AboutUs = () => {
 
   return (
     <section id="about" className="bg-background">
-      <div className="container mx-auto px-6 pt-24 pb-12">
+      <div className="container mx-auto px-6 pt-2 pb-12">
         <div className="text-center mb-8">
+          <div className="flex justify-center mb-6">
+            <img 
+              src="/logos/at-logo-white.png" 
+              alt="A&T Solutions Logo" 
+              className="h-auto"
+              style={{ width: '300px' }}
+            />
+          </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             About Us
           </h2>
@@ -39,7 +47,7 @@ export const AboutUs = () => {
                 />
                 <div className="flex-1">
                   <h3 className="text-xl font-semibold">{member.name}</h3>
-                  <p className="text-sm text-muted-foreground mb-3">
+                  <p className="text-sm text-muted-foreground mb-3" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
                     {member.role} • {member.education}
                   </p>
                   <div className="flex flex-wrap gap-2">

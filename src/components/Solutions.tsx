@@ -60,7 +60,7 @@ export const Solutions = () => {
           <h2 className="text-4xl md:text-5xl font-bold">
             Flagship Solutions
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
             Choose the AI solution that fits your business needs. Request a quote to get started.
           </p>
         </div>
@@ -78,7 +78,7 @@ export const Solutions = () => {
                     <div className="p-3 rounded-xl bg-primary/10 border border-primary/20 group-hover:bg-primary/20 transition-colors">
                       <Icon className="h-6 w-6 text-primary" />
                     </div>
-                    <div className="text-sm text-muted-foreground bg-secondary px-3 py-1 rounded-full">
+                    <div className="text-sm text-muted-foreground bg-secondary px-3 py-1 rounded-full" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
                       {solution.timeline}
                     </div>
                   </div>
@@ -92,7 +92,7 @@ export const Solutions = () => {
 
                   <ul className="space-y-2">
                     {solution.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
+                      <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
                         <div className="mt-1 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
                         <span>{feature}</span>
                       </li>

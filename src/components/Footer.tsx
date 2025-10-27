@@ -46,7 +46,7 @@ export const Footer = () => {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-border text-center text-sm text-muted-foreground">
+        <div className="pt-8 border-t border-border text-center text-sm text-muted-foreground" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
           <p>© 2025 A&T Solutions. All rights reserved.</p>
         </div>
       </div>
