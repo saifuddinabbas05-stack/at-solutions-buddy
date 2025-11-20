@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { LogoWithBgRemoval } from "./LogoWithBgRemoval";
 
@@ -35,43 +34,26 @@ export const Header = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border shadow-sm">
-      <div className="container mx-auto px-6">
-        <div className="flex items-center justify-between h-20">
-          <Link to="/" className="flex items-center gap-2" onClick={() => window.scrollTo(0, 0)}>
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="flex flex-col md:flex-row items-center justify-center md:justify-between h-20 py-2 md:py-0">
+          <Link to="/" className="flex items-center gap-2 mb-2 md:mb-0" onClick={() => window.scrollTo(0, 0)}>
             <LogoWithBgRemoval />
-            <span className="text-xl font-bold" style={{ fontFamily: "var(--font-serif)" }}>A&T Solutions</span>
+            <span className="text-xl font-bold text-center" style={{ fontFamily: "var(--font-serif)" }}>A&T Solutions</span>
           </Link>
           
-          <nav className="hidden md:flex items-center gap-8" style={{ fontFamily: "var(--font-sans)" }}>
+          <nav className="flex items-center gap-4 sm:gap-6 md:gap-8" style={{ fontFamily: "var(--font-sans)" }}>
             <button onClick={() => handleNavigation('#solutions')} className="text-sm font-medium hover:text-primary transition-colors">
               Solutions
             </button>
             <button onClick={() => handleNavigation('#about')} className="text-sm font-medium hover:text-primary transition-colors">
               About Us
             </button>
-            <Button onClick={() => handleNavigation('#book-demo')}>
+            <button 
+              onClick={() => handleNavigation('#book-demo')} 
+              className="text-sm font-medium hover:text-primary transition-colors md:bg-primary md:text-primary-foreground md:px-4 md:py-2 md:rounded-md md:hover:bg-primary/90"
+            >
               Book Demo
-            </Button>
-          </nav>
-
-          <Button className="md:hidden" onClick={() => {
-            const menu = document.querySelector('nav.md:hidden');
-            if (menu) {
-              menu.classList.toggle('hidden');
-            }
-          }}>Menu</Button>
-          <nav className="hidden md:hidden absolute top-20 left-0 right-0 bg-background border-t border-border p-4 shadow-lg">
-            <div className="flex flex-col gap-4">
-              <button onClick={() => handleNavigation('#solutions')} className="text-left px-4 py-2 text-sm font-medium hover:text-primary transition-colors">
-                Solutions
-              </button>
-              <button onClick={() => handleNavigation('#about')} className="text-left px-4 py-2 text-sm font-medium hover:text-primary transition-colors">
-                About Us
-              </button>
-              <Button onClick={() => handleNavigation('#book-demo')} className="w-full">
-                Book Demo
-              </Button>
-            </div>
+            </button>
           </nav>
         </div>
       </div>

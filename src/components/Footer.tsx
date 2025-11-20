@@ -59,9 +59,9 @@ export const Footer = () => {
 
   return (
     <footer className="py-12 bg-background border-t border-border">
-      <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-          <div className="space-y-4 md:col-span-1">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 text-center md:text-left">
+          <div className="space-y-4 md:col-span-1 flex flex-col items-center md:items-start">
             <Link to="/" className="flex items-center gap-2 group" onClick={() => window.scrollTo(0, 0)}>
               <img 
                 src={ATLogo} 
@@ -77,7 +77,7 @@ export const Footer = () => {
             </p>
           </div>
 
-          <div className="md:col-span-1">
+          <div className="md:col-span-1 flex flex-col items-center md:items-start">
             <h4 className="font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li><a href="/#about" className="hover:text-primary transition-colors" onClick={(e) => handleSectionClick(e, '#about')}>About Us</a></li>
@@ -87,7 +87,7 @@ export const Footer = () => {
             </ul>
           </div>
 
-          <div>
+          <div className="flex flex-col items-center md:items-start">
             <h4 className="font-semibold mb-4">Legal</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li><Link to="/privacy" className="hover:text-primary transition-colors" onClick={() => window.scrollTo(0, 0)}>Privacy Policy</Link></li>
